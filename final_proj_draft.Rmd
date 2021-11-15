@@ -54,6 +54,8 @@ complete_gdp <- full_join(gdp, gdp_growth, by = c("country_name", "year"))
 
 ```{r}
 
+
+
 ggplot(data = complete_gdp, aes(y = gdp, x = year)) +
   geom_point() +
   theme(axis.text.x = element_text(angle = 90))
@@ -63,20 +65,25 @@ ggplot(data = complete_gdp, aes(y = gdp_growth, x = year)) +
 
 ```
 
-```{r}
-hurricanes <- read_csv(here("final_proj_data", "bahamas_hurricanes.csv")) %>% 
-  filter(!(category == 0))
+The hurricane data was taken from the National Hurricane Center's Data Archive 
 
-ggplot(hurricanes, aes(x = name, y = category)) +
-  geom_col()
+- National Hurricane Center. (2021). NHC Data Archive. https://www.nhc.noaa.gov/data/
+
+
+```{r}
+storms <- read_csv(here("final_proj_data", "bahamas_hurricanes.csv")) 
+
+ggplot(storms, aes(x = name, y = category)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90))
 ```
 ```{r}
 
-yr_hurricane <- hurricanes %>% 
+yr_storms <- storms %>% 
   group_by(year) %>% 
   summarize(number = n())
 
-ggplot(data = yr_hurricane, aes(x = year, y = number)) +
+ggplot(data = yr_storms, aes(x = year, y = number)) +
   geom_point()
 ```
 

@@ -1,15 +1,33 @@
 ﻿year,name,category,no_of_islands
-1965,Hurricane Betsy,4,2
-1966,Hurricane Inez,4,2
-1973,TS Gilda,0,1
+1960,Donna,3,3
+1961,Gerda,0,4
+1963,Flora,2,3
+1965,Betsy,4,2
+1966,Inez,4,2
+1966,Celia,1,4
+1970,Greta,0,1
+1972,Dawn,0,1
+1973,TS Gilda,0,3
 1979,David,2,1
+1981,Arlene,0,3
+1981,Gert,2,2
+1981,Katrina,0,3
 1984,Isidore,0,2
+1985,Isabel,0,1
+1985,Kate,2,3
+1987,Floyd,0,3
+1988,Chris,0,2
+1991,Ana,0,3
+1991,Fabian,0,2
 1992,Andrew,5,6
 1995,Erin,2,4
 1996,Lili,3,1
+1996,Bertha,2,2
 1998,Georges,4,1
-1999,Dennis,1,2
+1999,Dennis,1,4
 1999,Floyd,4,5
+1999,Harvey,0,1
+1999,Irene,2,1
 2001,Michelle,4,2
 2002,TS Cristobal,0,2
 2003,Erika,1,2
@@ -17,13 +35,42 @@
 2003,Isabel,5,3
 2003,TS Mindy,0,1
 2004,Frances,3,17
-2007,Noel,1,2
-2011,TS Bret,0,2
+2004,Jeanne,3,4
+2005,Katrina,0,3
+2005,Rita,0,5
+2005,Franklin,0,3
+2005,Ophelia,0,2
+2005,Wilma,5,2
+2005,Tammy,0,2
+2006,Chris,0,2
+2007,Noel,1,5
+2008,Ike,3,1
+2008,Hanna,1,2
+2008,Paloma,4,2
+2010,Nicole,0,2
+2010,Bonnie,0,4
+2011,Bret,0,2
 2011,Irene,3,6
+2011,Emily,0,4
+2012,Sandy,3,5
+2012,Isaac,1,2
+2013,Dorian,0,2
+2014,Arthur,0,1
+2014,Bertha,1,3
 2015,Joaquin,4,6
+2015,Kate,1,3
 2016,Matthew,5,6
+2016,Alex,0,1
+2016,Bonnie,0,1
 2017,Irma,5,5
+2017,Philippe,0,2
+2017,Maria,4,2
+2018,Gordon,0,2
+2018,Beryl,1,2
 2019,Dorian,5,2
+2019,Humberto,3,3
 2020,Arthur,0,1
 2020,Isaias,1,3
 2020,Sally,0,1
+2020,Eta,1,1
+2021,Fred,1,1
