@@ -1,0 +1,83 @@
+---
+title: "Draft Final Project"
+author: "Paloma Cartwright"
+date: "14/11/2021"
+output: 
+  html_document:
+    toc: true
+    toc_float: true 
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(here)
+library(janitor)
+library(patchwork)
+
+```
+# Question 
+
+For my EDS 222 Final Project, I will look at the impact of hurricanes on the GDP growth of The Bahamas. 
+
+# Data Collection 
+
+The data for GDP as well as GDP Growth were collected from The World Bank Data Repository. 
+
+- World Bank. (2021). GDP (current US$)—Bahamas, The | Data. https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=BS
+
+- World Bank. (2021). GDP growth (annual %)—Bahamas, The | Data. https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS
+
+
+```{r}
+gdp <- read_csv(here("final_proj_data", "Bah_yearly_gdp.csv")) %>% 
+  rename("country_name" = "Country Name") %>% 
+  filter(country_name == "Bahamas, The") %>% 
+  select(-"Indicator Name") %>% 
+  pivot_longer(cols = 2:62, 
+               names_to = "year", 
+               values_to = "gdp")
+
+gdp_growth <- read_csv(here("final_proj_data", "bah_yearly_gdp_growth.csv")) %>% 
+  rename("country_name" = "Country Name") %>% 
+  filter(country_name == "Bahamas, The") %>% 
+  select(-"Indicator Name") %>% 
+  pivot_longer(cols = 2:62, 
+               names_to = "year", 
+               values_to = "gdp_growth")
+
+complete_gdp <- full_join(gdp, gdp_growth, by = c("country_name", "year"))
+```
+
+
+
+```{r}
+
+ggplot(data = complete_gdp, aes(y = gdp, x = year)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90))
+ggplot(data = complete_gdp, aes(y = gdp_growth, x = year)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 90))
+
+```
+
+```{r}
+hurricanes <- read_csv(here("final_proj_data", "bahamas_hurricanes.csv")) %>% 
+  filter(!(category == 0))
+
+ggplot(hurricanes, aes(x = name, y = category)) +
+  geom_col()
+```
+```{r}
+
+yr_hurricane <- hurricanes %>% 
+  group_by(year) %>% 
+  summarize(number = n())
+
+ggplot(data = yr_hurricane, aes(x = year, y = number)) +
+  geom_point()
+```
+
+
