@@ -48,12 +48,12 @@ gdp_growth <- read_csv(here("final_proj_data", "bah_yearly_gdp_growth.csv")) %>%
                values_to = "gdp_growth")
 
 complete_gdp <- full_join(gdp, gdp_growth, by = c("country_name", "year"))
+
 ```
 
 
 
 ```{r}
-
 
 
 ggplot(data = complete_gdp, aes(y = gdp, x = year)) +
